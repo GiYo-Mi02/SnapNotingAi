@@ -1,0 +1,25 @@
+# Node
+node_modules/
+**/node_modules/
+build/
+dist/
+.tmp/
+cache/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Uploads
+backend/uploads/
