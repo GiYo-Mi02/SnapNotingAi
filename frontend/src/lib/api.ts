@@ -1,8 +1,18 @@
 import axios from 'axios'
 import type { Result, Screenshot, Session } from '../types/api'
 
+// Get API base URL - use VITE_API_URL in production, /api proxy in development
+const getBaseURL = (): string => {
+  const apiUrl = import.meta.env.VITE_API_URL
+  if (apiUrl) {
+    return `${apiUrl}/api`
+  }
+  // Default to relative /api for dev server proxy
+  return '/api'
+}
+
 const client = axios.create({
-  baseURL: '/api',
+  baseURL: getBaseURL(),
   timeout: 20000
 })
 
