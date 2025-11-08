@@ -117,7 +117,7 @@ Make questions diverse (conceptual, factual, application-based). Each option sho
       },
       {
         role: 'user',
-        content: `Create 5-8 quiz questions from this summary:\n\n${summary}`
+        content: `Create 8 quiz questions from this summary:\n\n${summary}`
       }
     ],
     temperature: 0.7

@@ -54,7 +54,13 @@ export function QuizPage({ questions, onBack }: QuizPageProps) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
         <header className="border-b border-slate-800 bg-slate-950/70 backdrop-blur">
-          <div className="mx-auto max-w-4xl px-6 py-4">
+          <div className="mx-auto max-w-4xl px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+                <span className="text-base font-bold text-white">S</span>
+              </div>
+              <h2 className="text-lg font-semibold text-white">SnapNotesAI</h2>
+            </div>
             <button
               onClick={onBack}
               className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
@@ -129,7 +135,13 @@ export function QuizPage({ questions, onBack }: QuizPageProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
       <header className="border-b border-slate-800 bg-slate-950/70 backdrop-blur">
-        <div className="mx-auto max-w-4xl px-6 py-4">
+        <div className="mx-auto max-w-4xl px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+              <span className="text-base font-bold text-white">S</span>
+            </div>
+            <h2 className="text-lg font-semibold text-white">SnapNotesAI</h2>
+          </div>
           <button
             onClick={onBack}
             className="text-blue-400 hover:text-blue-300 transition-colors font-medium"

@@ -6,7 +6,258 @@
   color-scheme: dark;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Light theme overrides */
+html:not(.dark) {
+  @apply bg-white text-slate-900;
+}
+
+html:not(.dark) header {
+  @apply border-slate-200/50 bg-white/80;
+}
+
+html:not(.dark) section {
+  @apply border-slate-200/50 bg-slate-50/60;
+}
+
+html:not(.dark) button {
+  @apply text-slate-600 hover:text-slate-900;
+}
+
+/* ===================== ANIMATIONS ===================== */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Top */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In From Bottom */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Float */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  }
+}
+
+/* Gradient Shift */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.6s ease-out;
+}
+
+.animate-bounce-soft {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-gradientShift {
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* Staggered animations for lists */
+.animate-stagger > * {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-stagger > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-stagger > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.animate-stagger > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.animate-stagger > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.animate-stagger > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.animate-stagger > *:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.animate-stagger > *:nth-child(n + 7) {
+  animation-delay: 0.6s;
+}
+
+/* Page transition animations */
+.page-enter {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.page-exit {
+  animation: fadeIn 0.3s ease-out reverse;
 }

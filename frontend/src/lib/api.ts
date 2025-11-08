@@ -51,3 +51,23 @@ export const fetchScreenshots = async (sessionId: string): Promise<Screenshot[]>
   const response = await client.get(`/sessions/${sessionId}/screenshots`)
   return response.data.screenshots ?? []
 }
+
+// Manual input endpoints
+export const submitManualText = async (content: string): Promise<string> => {
+  const response = await client.post('/manual/text', { content })
+  return response.data.sessionId
+}
+
+export const submitAudioTranscript = async (transcript: string): Promise<string> => {
+  const response = await client.post('/manual/transcript', { transcript })
+  return response.data.sessionId
+}
+
+export const uploadDocument = async (file: File): Promise<string> => {
+  const form = new FormData()
+  form.append('document', file)
+  const response = await client.post('/manual/document', form, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  })
+  return response.data.sessionId
+}

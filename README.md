@@ -13,12 +13,15 @@ SnapShotAI/
 
 ## Features
 
-- Interval-based or manual capture of screen recordings (browser display media API via frontend).
-- Upload captured screenshots to the backend with local disk buffering and Supabase storage.
-- OCR processing powered by Tesseract.js workers.
-- Summarisation and quiz generation through OpenAI Responses API.
-- Supabase persistence for sessions, screenshots, and AI outputs.
-- Tailwind-powered dashboard to monitor captures, summaries, and quizzes in real time.
+- **📸 Screen Capture**: Interval-based or manual capture of screen recordings (browser display media API via frontend).
+- **📝 Manual Input**: Type notes directly, paste audio transcripts, or upload documents (PDF, DOCX, TXT).
+- **📄 Document Processing**: Automatic text extraction from PDFs and Word documents.
+- **✨ Smart Summarization**: Generate concise summaries using OpenAI API.
+- **🎓 Quiz Generation**: Automatically create self-study quiz questions from content.
+- **🔍 OCR Processing**: Extract text from screenshots using Tesseract.js workers.
+- **💾 Persistent Storage**: Supabase for sessions, screenshots, documents, and AI outputs.
+- **📊 Dashboard**: Real-time monitoring of captures, summaries, quizzes, and history.
+- **📚 History Tracking**: Auto-save and review all sessions in organized history page.
 
 ## Getting started
 
